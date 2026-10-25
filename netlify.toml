@@ -1,0 +1,12 @@
+# Netlify reads this file on every deploy.
+# The build step creates the product pages, category pages, sitemap.xml and feed.xml
+# from the Google Sheet. If it fails, Netlify keeps the previous version of the site live.
+[build]
+  command = "node build/generate.mjs"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
